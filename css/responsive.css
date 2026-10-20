@@ -1,0 +1,579 @@
+
+/* ==========================================
+   NORTHSTAR — RESPONSIVE LAYOUT
+   Mobile and tablet | HTML + CSS only
+========================================== */
+
+/* Prevent horizontal overflow */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main,
+section {
+  min-width: 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .nav-wrapper {
+    min-height: 82px;
+    padding: 14px 26px;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .main-nav {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .intro-content {
+    grid-column: 1 / -1;
+  }
+
+  .destination-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .destination-card-large {
+    grid-column: 1 / -1;
+  }
+
+  .destination-card,
+  .destination-card-large .destination-image {
+    min-height: 380px;
+  }
+
+  .experience-grid,
+  .journal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pakistan-feature {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-title {
+    font-size: clamp(58px, 9vw, 90px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  :root {
+    --gutter: 20px;
+  }
+
+  /* Header: keep brand and CTA tidy */
+  .site-header {
+    position: absolute;
+    width: 100%;
+  }
+
+  .nav-wrapper {
+    min-height: auto;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .brand {
+    gap: 9px;
+    max-width: 100%;
+  }
+
+  .brand-symbol {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    font-size: 20px;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.35;
+  }
+
+  .brand-text strong {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+  }
+
+  .brand-text small {
+    font-size: 8px;
+    letter-spacing: 0.12em;
+  }
+
+  /* No hamburger yet: show links in a compact scrollable row */
+  .main-nav {
+    order: 3;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 4px 0 9px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .main-nav .nav-link {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 11px;
+    padding: 6px 0;
+  }
+
+  .nav-cta {
+    padding: 9px 11px;
+    font-size: 10px;
+    flex: 0 0 auto;
+  }
+
+  .nav-cta span {
+    margin-left: 5px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 760px;
+    min-height: max(760px, 100svh);
+  }
+
+  .hero-content {
+    width: calc(100% - 40px);
+    max-width: 100%;
+    margin-left: 20px;
+    padding-top: 145px;
+    padding-bottom: 135px;
+  }
+
+  .eyebrow {
+    gap: 9px;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+  }
+
+  .eyebrow-line {
+    width: 22px;
+  }
+
+  .hero-title {
+    margin-top: 22px;
+    font-size: clamp(49px, 13vw, 70px);
+    line-height: 1.04;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-description {
+    max-width: 100%;
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 25px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    min-width: 0;
+    min-height: 50px;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 16px;
+    font-size: 11px;
+  }
+
+  .hero-bottom {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    gap: 12px;
+    align-items: end;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-location {
+    gap: 8px;
+  }
+
+  .hero-index {
+    display: none;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  .hero-decoration {
+    display: none;
+  }
+
+  /* Section spacing and headings */
+  .intro-section,
+  .destinations-section,
+  .experience-section,
+  .journal-section {
+    padding: 65px 20px;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+  }
+
+  .intro-content {
+    grid-column: auto;
+    min-width: 0;
+  }
+
+  .section-label {
+    font-size: 8px;
+    letter-spacing: 0.09em;
+    line-height: 1.7;
+    flex-wrap: wrap;
+  }
+
+  .section-title {
+    font-size: clamp(32px, 8.5vw, 44px);
+    line-height: 1.18;
+    overflow-wrap: break-word;
+  }
+
+  .section-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .section-heading .section-title {
+    margin-top: 12px;
+  }
+
+  .section-heading > .underlined-link {
+    margin-top: 8px;
+  }
+
+  .intro-description {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .intro-stat {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .stat-orbit {
+    width: 115px;
+    height: 115px;
+  }
+
+  .stat-number {
+    font-size: 48px;
+  }
+
+  /* Destination cards */
+  .destination-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .destination-card,
+  .destination-card-large {
+    min-height: 350px;
+    grid-column: auto;
+  }
+
+  .destination-card-large .destination-image,
+  .destination-image {
+    min-height: 350px;
+  }
+
+  .destination-caption {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    padding: 0;
+    gap: 10px;
+  }
+
+  .destination-caption h3 {
+    font-size: clamp(25px, 7vw, 32px);
+  }
+
+  .destination-caption p,
+  .destination-kicker {
+    font-size: 10px;
+    overflow-wrap: anywhere;
+  }
+
+  .card-number {
+    top: 18px;
+    left: 18px;
+  }
+
+  .card-arrow {
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  /* Manifesto */
+  .manifesto-section {
+    min-height: 400px;
+  }
+
+  .manifesto-content {
+    padding: 65px 20px;
+  }
+
+  .manifesto-quote {
+    font-size: clamp(31px, 8.5vw, 43px);
+    line-height: 1.2;
+    overflow-wrap: break-word;
+  }
+
+  /* Experience and journal cards */
+  .experience-grid,
+  .journal-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .experience-card {
+    min-height: 0;
+    padding: 25px 22px;
+  }
+
+  .experience-card h3,
+  .journal-card h3 {
+    font-size: 24px;
+    overflow-wrap: break-word;
+  }
+
+  .experience-card p,
+  .journal-card p {
+    font-size: 12px;
+  }
+
+  .journal-image {
+    min-height: 220px;
+  }
+
+  /* Pakistan feature */
+  .pakistan-feature {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pakistan-feature-image {
+    min-height: 280px;
+  }
+
+  .pakistan-feature-content {
+    padding: 45px 20px;
+  }
+
+  .pakistan-feature-content .section-title {
+    font-size: clamp(35px, 9vw, 46px);
+  }
+
+  .pakistan-feature-content > p {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  /* Closing CTA */
+  .closing-section {
+    padding: 70px 20px;
+  }
+
+  .closing-inner {
+    width: 100%;
+  }
+
+  .closing-inner h2 {
+    font-size: clamp(32px, 8.5vw, 44px);
+    line-height: 1.2;
+    overflow-wrap: break-word;
+  }
+
+  .closing-inner > p {
+    font-size: 13px;
+  }
+
+  .closing-inner .button {
+    max-width: 100%;
+    gap: 12px;
+    padding: 0 16px;
+    font-size: 11px;
+  }
+
+  .closing-note {
+    font-size: 8px;
+    letter-spacing: 0.1em;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding-top: 50px;
+  }
+
+  .footer-main {
+    width: calc(100% - 40px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+    padding-bottom: 35px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
+
+  .footer-brand > p {
+    font-size: 12px;
+  }
+
+  .footer-column {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .footer-column h4,
+  .footer-column h2 {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+
+  .footer-column a {
+    margin: 5px 0;
+    font-size: 10px;
+    overflow-wrap: anywhere;
+  }
+
+  .footer-bottom {
+    width: calc(100% - 40px);
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 22px;
+    padding-bottom: 25px;
+    font-size: 8px;
+    line-height: 1.7;
+  }
+
+  .back-to-top {
+    order: -1;
+    min-width: 0;
+  }
+
+  /* Keep controls within their cards */
+  .button,
+  .nav-cta,
+  .underlined-link {
+    max-width: 100%;
+  }
+
+  .underlined-link {
+    gap: 10px;
+    font-size: 10px;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .nav-wrapper {
+    padding-inline: 14px;
+  }
+
+  .brand {
+    gap: 7px;
+  }
+
+  .brand-text strong {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  .nav-cta {
+    padding: 8px;
+    font-size: 9px;
+  }
+
+  .hero-content {
+    width: calc(100% - 28px);
+    margin-left: 14px;
+  }
+
+  .hero-title {
+    font-size: 47px;
+  }
+
+  .hero-bottom {
+    left: 14px;
+    right: 14px;
+  }
+
+  .intro-section,
+  .destinations-section,
+  .experience-section,
+  .journal-section,
+  .pakistan-feature-content,
+  .closing-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .footer-main,
+  .footer-bottom {
+    width: calc(100% - 28px);
+  }
+}
+
+/* Center Back to Top on Mobile */
+@media (max-width: 600px) {
+  .footer-bottom .back-to-top {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
