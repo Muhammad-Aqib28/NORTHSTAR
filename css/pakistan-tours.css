@@ -1,0 +1,505 @@
+
+/* NORTHSTAR — Pakistan Tours */
+
+.pakistan-tours-page {
+  background: var(--bg, #101510);
+  color: var(--cream, #f1eee5);
+}
+
+.pakistan-tours-page *,
+.pakistan-tours-page *::before,
+.pakistan-tours-page *::after {
+  box-sizing: border-box;
+}
+
+.pakistan-tours-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pt-header {
+  min-height: 84px;
+  padding: 20px var(--gutter, 5vw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 22px;
+  border-bottom: 1px solid var(--line, rgba(241,238,229,.13));
+}
+
+.pt-logo {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.pt-logo span {
+  color: var(--accent, #c8a96b);
+}
+
+.pt-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+}
+
+.pt-header nav a {
+  color: var(--muted, #a8afa3);
+  font-size: 11px;
+  transition: color .25s ease;
+}
+
+.pt-header nav a:hover,
+.pt-header nav a.active {
+  color: var(--accent-light, #e5d0a0);
+}
+
+.pt-hero {
+  position: relative;
+  min-height: 640px;
+  min-height: min(780px, 82vh);
+  display: flex;
+  align-items: center;
+  padding: 80px var(--gutter, 5vw);
+  overflow: hidden;
+  background: #17221a;
+}
+
+.pt-hero-image,
+.pt-hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pt-hero-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.pt-hero-overlay {
+  background: linear-gradient(90deg, rgba(10,16,11,.88), rgba(10,16,11,.42) 60%, rgba(10,16,11,.12)),
+              linear-gradient(0deg, rgba(10,16,11,.4), transparent 45%);
+}
+
+.pt-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.pt-eyebrow {
+  margin: 0 0 20px;
+  color: var(--accent, #c8a96b);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.8;
+}
+
+.pt-hero h1 {
+  margin: 0;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(48px, 7.5vw, 96px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.pt-hero h1 em,
+.pt-intro h2 em,
+.pt-experience h2 em,
+.pt-trip-planner h2 em {
+  color: var(--accent-light, #e5d0a0);
+  font-weight: 400;
+}
+
+.pt-hero-content > p:not(.pt-eyebrow) {
+  max-width: 510px;
+  margin: 24px 0 30px;
+  color: #d1d5cc;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.pt-button {
+  display: inline-block;
+  padding: 15px 22px;
+  border: 1px solid var(--accent, #c8a96b);
+  color: var(--accent-light, #e5d0a0);
+  font-size: 11px;
+  transition: background .25s ease, color .25s ease;
+}
+
+.pt-button span {
+  margin-left: 12px;
+}
+
+.pt-button:hover {
+  background: var(--accent, #c8a96b);
+  color: var(--bg, #101510);
+}
+
+.pt-hero-note {
+  position: absolute;
+  right: var(--gutter, 5vw);
+  bottom: 30px;
+  z-index: 1;
+  color: #e2e2d8;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.pt-intro {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 110px 24px;
+  text-align: center;
+}
+
+.pt-intro h2,
+.pt-experience h2,
+.pt-trip-planner h2 {
+  margin: 0;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(35px, 5vw, 58px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.pt-intro > p:last-child,
+.pt-trip-planner > p:not(.pt-eyebrow) {
+  max-width: 610px;
+  margin: 24px auto 0;
+  color: var(--muted, #a8afa3);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.pt-destinations {
+  width: min(1240px, 90%);
+  margin: 0 auto;
+  padding-bottom: 115px;
+}
+
+.pt-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 38px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--line, rgba(241,238,229,.13));
+}
+
+.pt-section-heading .pt-eyebrow {
+  margin-bottom: 8px;
+}
+
+.pt-section-heading h2 {
+  margin: 0;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 400;
+}
+
+.pt-section-heading > p {
+  margin: 0;
+  color: var(--muted, #a8afa3);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.pt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px 25px;
+}
+
+.pt-card {
+  min-width: 0;
+}
+
+.pt-card-large {
+  grid-column: span 2;
+}
+
+.pt-card-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bg-card, #1d261f);
+}
+
+.pt-card-large .pt-card-image {
+  aspect-ratio: 16 / 8;
+}
+
+.pt-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .65s ease;
+}
+
+.pt-card-image:hover img {
+  transform: scale(1.045);
+}
+
+.pt-card-number {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  color: #fff;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 22px;
+  text-shadow: 0 1px 8px #000;
+}
+
+.pt-card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 20px;
+}
+
+.pt-card-location {
+  margin: 0 0 8px;
+  color: var(--accent, #c8a96b);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.pt-card-info h3 {
+  margin: 0;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 400;
+}
+
+.pt-card-info > a {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line, rgba(241,238,229,.13));
+  color: var(--accent-light, #e5d0a0);
+  transition: background .25s ease;
+}
+
+.pt-card-info > a:hover {
+  background: var(--bg-card, #1d261f);
+}
+
+.pt-card-description {
+  margin: 12px 0 0;
+  color: var(--muted, #a8afa3);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.pt-experience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--bg-soft, #171e18);
+}
+
+.pt-experience-image {
+  min-height: 560px;
+  overflow: hidden;
+}
+
+.pt-experience-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+}
+
+.pt-experience-content {
+  align-self: center;
+  padding: clamp(35px, 6vw, 85px);
+}
+
+.pt-experience h2 {
+  font-size: clamp(32px, 4vw, 50px);
+}
+
+.pt-experience-content > p:not(.pt-eyebrow) {
+  margin: 22px 0;
+  color: var(--muted, #a8afa3);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.pt-experience ul {
+  margin: 28px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pt-experience li {
+  display: flex;
+  gap: 18px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line, rgba(241,238,229,.13));
+  font-size: 12px;
+}
+
+.pt-experience li span {
+  color: var(--accent, #c8a96b);
+}
+
+.pt-text-link {
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--accent, #c8a96b);
+  font-size: 11px;
+}
+
+.pt-trip-planner {
+  padding: 110px 24px;
+  text-align: center;
+}
+
+.pt-trip-planner > p:not(.pt-eyebrow) {
+  margin-bottom: 28px;
+}
+
+.pt-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px var(--gutter, 5vw);
+  border-top: 1px solid var(--line, rgba(241,238,229,.13));
+}
+
+.pt-footer > p {
+  margin: 0;
+  color: var(--muted, #a8afa3);
+  font-size: 11px;
+}
+
+.pt-footer > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.pt-footer > div a {
+  color: var(--muted, #a8afa3);
+  font-size: 11px;
+}
+
+@media (max-width: 900px) {
+  .pt-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pt-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pt-card-large {
+    grid-column: span 2;
+  }
+
+  .pt-experience {
+    grid-template-columns: 1fr;
+  }
+
+  .pt-experience-image,
+  .pt-experience-image img {
+    min-height: 380px;
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 560px) {
+  .pt-header {
+    padding: 20px;
+  }
+
+  .pt-header nav {
+    gap: 12px 15px;
+  }
+
+  .pt-header nav a {
+    font-size: 10px;
+  }
+
+  .pt-hero {
+    min-height: 620px;
+    padding: 65px 22px;
+  }
+
+  .pt-hero h1 {
+    font-size: clamp(43px, 12vw, 64px);
+    letter-spacing: -1px;
+  }
+
+  .pt-hero-note {
+    right: 20px;
+    bottom: 20px;
+    font-size: 8px;
+  }
+
+  .pt-intro {
+    padding: 80px 22px;
+  }
+
+  .pt-destinations {
+    width: calc(100% - 40px);
+    padding-bottom: 80px;
+  }
+
+  .pt-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pt-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+  }
+
+  .pt-card-large {
+    grid-column: auto;
+  }
+
+  .pt-card-large .pt-card-image,
+  .pt-card-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .pt-experience-image,
+  .pt-experience-image img {
+    min-height: 300px;
+  }
+
+  .pt-experience-content {
+    padding: 45px 22px;
+  }
+
+  .pt-trip-planner {
+    padding: 80px 22px;
+  }
+
+  .pt-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 28px 20px;
+  }
+}
